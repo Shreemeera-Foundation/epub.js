@@ -16,7 +16,14 @@
   </head>
   <body>
     <div id="main">
-      <div id="viewer" class="spreads loading"></div>
+			<div style="vertical-align: middle; text-align: center;">
+				<select id="languagePreferenceDropdown" onchange="changeLanguagePrefernce()">
+					<option value="devanagari">श्रीज्ञानेश्वरी अध्याय १ ला</option>
+					<option value="transliterated" selected>ShreeJñāneshwarī Adhyay 1 Transliterated</option>
+				</select>
+			</div>
+      <div id="viewer" class="spreads loading">
+			</div>
       <span id="hiddenTitle"></span>
       <a id="prev" href="#prev" class="arrow">‹</a>
       <a id="next" href="#next" class="arrow">›</a>
@@ -32,85 +39,70 @@
     </div>
 
     <script>
-      // Load the opf
-      // var book = ePub("https://s3.amazonaws.com/moby-dick/OPS/package.opf");
-      // var book = ePub("https://s3.amazonaws.com/moby-dick/moby-dick.epub")
-
+      var currentLanguagePreferenceDropdown = 'transliterated';
       var book, rendition;
-      try {
-        // book = ePub('http://localhost:8080/examples/books/SVP-106/EPUB/content.opf');
-        book = ePub('http://localhost:8080/examples/books/Jnaneshwari/Jnaneshwar-Adhyay-1/EPUB/content.opf ');
-        // book = ePub("https://s3.amazonaws.com/moby-dick/OPS/package.opf");
-        rendition = book.renderTo('viewer', {
-          method: 'continuous',
-          width: '100%',
-          height: '100%',
-          allowScriptedContent: true,
-        });
-      } catch (err) {
-        console.log(err);
-      }
 
-      var displayed = rendition.display(undefined);
-
-      // Navigation loaded
-      // book.loaded.navigation.then(function(toc){
-      //   console.log(toc);
-      // });
-
-      var next = document.getElementById('next');
-      next.addEventListener(
-        'click',
-        function () {
-          rendition.next();
-        },
-        false
-      );
-
-      var prev = document.getElementById('prev');
-      prev.addEventListener(
-        'click',
-        function () {
-          rendition.prev();
-        },
-        false
-      );
-
-      var keyListener = function (e) {
-        // Left Key
-        if ((e.keyCode || e.which) == 37) {
-          rendition.prev();
-        }
-
-        // Right Key
-        if ((e.keyCode || e.which) == 39) {
-          rendition.next();
-        }
+      const changeLanguagePrefernce = () => {
+        const newlyChosenLanguage = document.getElementById('languagePreferenceDropdown').value;
+				// reload book
+				if (newlyChosenLanguage === 'transliterated') {
+					loadBook('http://localhost:8080/examples/books/Jnaneshwari/Jnaneshwar-Adhyay-1-TX/EPUB/content.opf');
+				} else if (newlyChosenLanguage === 'devanagari') {
+					loadBook('http://localhost:8080/examples/books/Jnaneshwari/Jnaneshwar-Adhyay-1-Devanagari/EPUB/content.opf');
+				}
+				else {
+					alert('Error loading book for the chosen language ' + newlyChosenLanguage);
+				}
       };
 
-      rendition.on('keyup', keyListener);
-      document.addEventListener('keyup', keyListener, false);
+			const goToNextPage = () => {
+				rendition.next()
+			}
 
-      rendition.on('relocated', function (location) {
-        console.log(location);
-      });
+			const goToPrevPage = () => {
+				rendition.prev()
+			}
 
-      rendition.themes.default({
-        p: {
-          margin: '30px',
-        },
-      });
+      const loadBook = (bookUrl) => {
+        try {
+          if (book !== null && book !== undefined) {
+            book.destroy();
+          }
 
-			rendition.themes.register("custom-font", "examples.css");
-      rendition.themes.select('custom-font');
+          if (rendition !== null && rendition !== undefined) {
+            rendition.destroy();
+          }
 
-      // rendition.hooks.content.register(function (contents) {
-      //   console.log("Book Contents ", contents);
-      // });
+          book = ePub(bookUrl);
+          rendition = book.renderTo('viewer', {
+            method: 'continuous',
+            width: '100%',
+            height: '100%',
+            allowScriptedContent: true,
+          });
+        } catch (err) {
+          console.log(err);
+        }
 
-      // book.spine.hooks.content.register(function (contents) {
-      //   console.log("Spine contents ", contents);
-      // });
+        rendition.display(undefined);
+
+        rendition.themes.default({
+          p: {
+            margin: '30px',
+          },
+        });
+
+        rendition.themes.register('custom-font', 'examples.css');
+        rendition.themes.select('custom-font');
+      }; // END: loadBook method
+
+      changeLanguagePrefernce();
+
+			var next = document.getElementById('next');
+      next.addEventListener('click', goToNextPage, false );
+
+			var prev = document.getElementById('prev');
+			prev.addEventListener('click', goToPrevPage, false );
     </script>
   </body>
 </html>
