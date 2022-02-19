@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="urn:uuid:7ebce7fe-8815-4859-b284-b1d6d0d9e96a" />
+    <meta name="dtb:depth" content="1" />
+    <meta name="dtb:totalPageCount" content="0" />
+    <meta name="dtb:maxPageNumber" content="0" />
+  </head>
+  <docTitle>
+    <text>ShreeJñāneshwarī Adhyay 16 Transliterated</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="navPoint-0">
+      <navLabel>
+        <text>ShreeJñāneshwarī Adhyay 16 Transliterated</text>
+      </navLabel>
+      <content src="text/title_page.xhtml" />
+    </navPoint>
+    <navPoint id="navPoint-1">
+      <navLabel>
+        <text>ShreeJñāneshwarī Adhyay 16 Transliterated</text>
+      </navLabel>
+      <content src="text/ch001.xhtml#shreejñāneshwarī-adhyay-16-transliterated" />
+    </navPoint>
+  </navMap>
+</ncx>

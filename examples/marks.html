@@ -17,9 +17,43 @@
   <body>
     <div id="main">
 			<div style="vertical-align: middle; text-align: center;">
-				<select id="languagePreferenceDropdown" onchange="changeLanguagePrefernce()">
-					<option value="devanagari">श्रीज्ञानेश्वरी अध्याय १ ला</option>
-					<option value="transliterated" selected>ShreeJñāneshwarī Adhyay 1 Transliterated</option>
+				<select id="chapter" onchange="changeChapter()">
+					<option value="Jnaneshwari-Adhyay-01-TX" selected> Shree Jnaneshwar Adhyay 01 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-01-Devanagari"> Shree Jnaneshwar Adhyay 01 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-02-TX"> Shree Jnaneshwar Adhyay 02 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-02-Devanagari"> Shree Jnaneshwar Adhyay 02 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-03-TX"> Shree Jnaneshwar Adhyay 03 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-03-Devanagari"> Shree Jnaneshwar Adhyay 03 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-04-TX"> Shree Jnaneshwar Adhyay 04 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-04-Devanagari"> Shree Jnaneshwar Adhyay 04 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-05-TX"> Shree Jnaneshwar Adhyay 05 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-05-Devanagari"> Shree Jnaneshwar Adhyay 05 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-06-TX"> Shree Jnaneshwar Adhyay 06 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-06-Devanagari"> Shree Jnaneshwar Adhyay 06 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-07-TX"> Shree Jnaneshwar Adhyay 07 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-07-Devanagari"> Shree Jnaneshwar Adhyay 07 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-08-TX"> Shree Jnaneshwar Adhyay 08 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-08-Devanagari"> Shree Jnaneshwar Adhyay 08 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-09-TX"> Shree Jnaneshwar Adhyay 09 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-09-Devanagari"> Shree Jnaneshwar Adhyay 09 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-10-TX"> Shree Jnaneshwar Adhyay 10 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-10-Devanagari"> Shree Jnaneshwar Adhyay 10 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-11-TX"> Shree Jnaneshwar Adhyay 11 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-11-Devanagari"> Shree Jnaneshwar Adhyay 11 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-12-TX"> Shree Jnaneshwar Adhyay 12 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-12-Devanagari"> Shree Jnaneshwar Adhyay 12 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-13-TX"> Shree Jnaneshwar Adhyay 13 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-13-Devanagari"> Shree Jnaneshwar Adhyay 13 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-14-TX"> Shree Jnaneshwar Adhyay 14 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-14-Devanagari"> Shree Jnaneshwar Adhyay 14 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-15-TX"> Shree Jnaneshwar Adhyay 15 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-15-Devanagari"> Shree Jnaneshwar Adhyay 15 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-16-TX"> Shree Jnaneshwar Adhyay 16 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-16-Devanagari"> Shree Jnaneshwar Adhyay 16 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-17-TX"> Shree Jnaneshwar Adhyay 17 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-17-Devanagari"> Shree Jnaneshwar Adhyay 17 devanagari </option>
+					<option value="Jnaneshwari-Adhyay-18-TX"> Shree Jnaneshwar Adhyay 18 transliterated </option>
+					<option value="Jnaneshwari-Adhyay-18-Devanagari"> Shree Jnaneshwar Adhyay 18 devanagari </option>
 				</select>
 			</div>
       <div id="viewer" class="spreads loading">
@@ -42,17 +76,10 @@
       var currentLanguagePreferenceDropdown = 'transliterated';
       var book, rendition;
 
-      const changeLanguagePrefernce = () => {
-        const newlyChosenLanguage = document.getElementById('languagePreferenceDropdown').value;
-				// reload book
-				if (newlyChosenLanguage === 'transliterated') {
-					loadBook('http://localhost:8080/examples/books/Jnaneshwari/Jnaneshwar-Adhyay-1-TX/EPUB/content.opf');
-				} else if (newlyChosenLanguage === 'devanagari') {
-					loadBook('http://localhost:8080/examples/books/Jnaneshwari/Jnaneshwar-Adhyay-1-Devanagari/EPUB/content.opf');
-				}
-				else {
-					alert('Error loading book for the chosen language ' + newlyChosenLanguage);
-				}
+      const changeChapter = () => {
+        const chapter = document.getElementById('chapter').value;
+				console.log("chapter ",chapter)
+				loadBook(`http://localhost:8080/examples/books/Jnaneshwari/${chapter}/EPUB/content.opf`);
       };
 
 			const goToNextPage = () => {
@@ -96,7 +123,7 @@
         rendition.themes.select('custom-font');
       }; // END: loadBook method
 
-      changeLanguagePrefernce();
+      changeChapter();
 
 			var next = document.getElementById('next');
       next.addEventListener('click', goToNextPage, false );
