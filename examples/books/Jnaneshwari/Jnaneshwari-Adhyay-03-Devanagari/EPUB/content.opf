@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="epub-id-1" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
-    <dc:identifier id="epub-id-1">urn:uuid:ce7dd5e0-b10a-447d-a66d-280e01d16d93</dc:identifier>
-    <dc:title id="epub-title-1">ShreeJñāneshwarī Adhyay 3 Transliterated</dc:title>
-    <dc:date id="epub-date">2022-02-19T14:37:22Z</dc:date>
+    <dc:identifier id="epub-id-1">urn:uuid:e7e03421-970e-4910-8068-1924e085dba6</dc:identifier>
+    <dc:title id="epub-title-1">ShreeJñāneshwarī Adhyay 3 Devanagari</dc:title>
+    <dc:date id="epub-date">2022-02-19T14:46:22Z</dc:date>
     <dc:language>en-US</dc:language>
-    <meta property="dcterms:modified">2022-02-19T14:37:22Z</meta>
+    <meta property="dcterms:modified">2022-02-19T14:46:22Z</meta>
   </metadata>
   <manifest>
     <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
@@ -19,6 +19,6 @@
     <itemref idref="ch001_xhtml" />
   </spine>
   <guide>
-    <reference type="toc" title="ShreeJñāneshwarī Adhyay 3 Transliterated" href="nav.xhtml" />
+    <reference type="toc" title="ShreeJñāneshwarī Adhyay 3 Devanagari" href="nav.xhtml" />
   </guide>
 </package>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="epub-id-1" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
-    <dc:identifier id="epub-id-1">urn:uuid:d395c361-1c70-4f8a-b54e-be811ddb2501</dc:identifier>
+    <dc:identifier id="epub-id-1">urn:uuid:715fe417-e9db-4f07-9256-96ecd516909a</dc:identifier>
     <dc:title id="epub-title-1">ShreeJñāneshwarī Adhyay 2 Transliterated</dc:title>
-    <dc:date id="epub-date">2022-02-19T14:37:17Z</dc:date>
+    <dc:date id="epub-date">2022-02-19T14:46:16Z</dc:date>
     <dc:language>en-US</dc:language>
-    <meta property="dcterms:modified">2022-02-19T14:37:17Z</meta>
+    <meta property="dcterms:modified">2022-02-19T14:46:16Z</meta>
   </metadata>
   <manifest>
     <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />

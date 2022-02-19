@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="epub-id-1" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
-    <dc:identifier id="epub-id-1">urn:uuid:8485dcf6-13aa-4663-945a-9317a86c87fc</dc:identifier>
-    <dc:title id="epub-title-1">ShreeJñāneshwarī Adhyay 14 Transliterated</dc:title>
-    <dc:date id="epub-date">2022-02-19T14:37:26Z</dc:date>
+    <dc:identifier id="epub-id-1">urn:uuid:62629eb4-b854-48b4-8bc3-453e967a6c52</dc:identifier>
+    <dc:title id="epub-title-1">ShreeJñāneshwarī Adhyay 14 Devanagari</dc:title>
+    <dc:date id="epub-date">2022-02-19T14:46:25Z</dc:date>
     <dc:language>en-US</dc:language>
-    <meta property="dcterms:modified">2022-02-19T14:37:26Z</meta>
+    <meta property="dcterms:modified">2022-02-19T14:46:25Z</meta>
   </metadata>
   <manifest>
     <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
@@ -19,6 +19,6 @@
     <itemref idref="ch001_xhtml" />
   </spine>
   <guide>
-    <reference type="toc" title="ShreeJñāneshwarī Adhyay 14 Transliterated" href="nav.xhtml" />
+    <reference type="toc" title="ShreeJñāneshwarī Adhyay 14 Devanagari" href="nav.xhtml" />
   </guide>
 </package>

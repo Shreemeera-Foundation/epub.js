@@ -96,9 +96,9 @@
             book.destroy();
           }
 
-          if (rendition !== null && rendition !== undefined) {
-            rendition.destroy();
-          }
+          // if (rendition !== null && rendition !== undefined) {
+          //   rendition.destroy();
+          // }
 
           book = ePub(bookUrl);
           rendition = book.renderTo('viewer', {
